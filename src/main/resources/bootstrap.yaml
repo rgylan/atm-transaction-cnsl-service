@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - eth0
+    consul:
+      host: 172.42.42.102
+      port: 8500

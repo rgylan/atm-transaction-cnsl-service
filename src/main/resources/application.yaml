@@ -1,0 +1,33 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: transaction-cnsl-service
+  datasource:
+    url: jdbc:h2:mem:testdb;INIT=CREATE SCHEMA IF NOT EXISTS atm
+    username: sa
+    driver-class: org.h2.Driver
+    platform: h2
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    show-sql: true
+    hibernate:
+      dll-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: true
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+        prefer-ip-address: true
+
+logging:
+  file: logs/atm-account-service
+  level:
+    root: info
