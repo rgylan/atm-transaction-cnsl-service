@@ -4,6 +4,5 @@ spring:
       ignoredInterfaces:
         - eth0
     consul:
-      #host: 172.42.42.102
-      host: localhost
+      host: 172.42.42.102
       port: 8500
