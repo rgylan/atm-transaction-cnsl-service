@@ -18,7 +18,7 @@ buildscript {
 apply plugin: "java"
 apply plugin: "org.springframework.boot"
 apply plugin: "io.spring.dependency-management"
-apply plugin: "com.jfrog.artifactory"
+//apply plugin: "com.jfrog.artifactory"
 
 group 'com.rgy'
 version '1.0-SNAPSHOT'
